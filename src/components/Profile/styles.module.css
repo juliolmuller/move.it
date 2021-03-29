@@ -1,0 +1,32 @@
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile > img {
+  object-fit: cover;
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+}
+
+.profile > div {
+  margin-left: 1rem;
+}
+
+.profile > div strong {
+  display: block;
+  color: var(--title);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.profile > div span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.profile > div span img {
+  margin-right: 0.5rem;
+}
