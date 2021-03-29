@@ -1,6 +1,7 @@
-import ExperienceBar from '../components/ExperienceBar'
-import Profile from '../components/Profile'
 import CompletedChallenges from '../components/CompletedChallenges'
+import ExperienceBar from '../components/ExperienceBar'
+import CountDown from '../components/CountDown'
+import Profile from '../components/Profile'
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
         <section className="leftSection">
           <Profile />
           <CompletedChallenges />
+          <CountDown />
         </section>
         <section className="rightSection">
           Right section
