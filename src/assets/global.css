@@ -16,7 +16,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: 400 1rem Inter, sans-serif;
 }
 
 @media (max-width: 1080px) {
@@ -35,6 +34,10 @@ body {
   background-color: var(--background);
   font-family: Inter, sans-serif;
   color: var(--text);
+}
+
+body, input, textarea, button {
+  font: 400 1rem Inter, sans-serif;
 }
 
 a {
