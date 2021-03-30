@@ -58,3 +58,13 @@
 .button:hover {
   background-color: var(--dark-blue);
 }
+
+.button.cycleActive {
+  background-color: var(--white);
+  color: var(--title);
+}
+
+.button.cycleActive:hover {
+  background-color: var(--red);
+  color: var(--white);
+}

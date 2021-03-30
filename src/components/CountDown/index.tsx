@@ -5,6 +5,8 @@ const SECONDS_PER_MINUTE = 60
 const POMODORO_CYCLE_MIN = 25
 const POMODORO_CYCLE_SEC = SECONDS_PER_MINUTE * POMODORO_CYCLE_MIN
 
+let countDownTimeout: NodeJS.Timeout
+
 function CountDown() {
   const [isActive, setActive] = useState(false)
   const [time, setTime] = useState(POMODORO_CYCLE_SEC)
@@ -14,13 +16,9 @@ function CountDown() {
   const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
   const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
 
-  function handleClick() {
-    setActive(true)
-  }
-
   useEffect(() => {
     if (isActive && time > 0) {
-      setTimeout(() => setTime(time - 1), 1000)
+      countDownTimeout = setTimeout(() => setTime(time - 1), 1000)
     }
   }, [isActive, time])
 
@@ -38,13 +36,23 @@ function CountDown() {
         </div>
       </div>
 
-      <button
-        type="button"
-        className={styles.button}
-        onClick={handleClick}
-      >
-        Iniciar um Ciclo
-      </button>
+      {isActive ? (
+        <button
+          type="button"
+          className={`${styles.button} ${styles.cycleActive}`}
+          onClick={() => {
+            clearTimeout(countDownTimeout)
+            setTime(POMODORO_CYCLE_SEC)
+            setActive(false)
+          }}
+        >Abandonar Ciclo</button>
+      ) : (
+        <button
+          type="button"
+          className={styles.button}
+          onClick={() => setActive(true)}
+        >Iniciar Novo Ciclo</button>
+      )}
     </>
   )
 }
