@@ -55,12 +55,18 @@
   transition: background-color 0.2s;
 }
 
-.button:hover {
+.button:not(:disabled):hover {
   background-color: var(--dark-blue);
 }
 
-.button.cycleActive {
+.button:disabled {
   background-color: var(--white);
+  color: var(--text);
+  cursor: not-allowed;
+}
+
+.button.cycleActive {
+  background-color: var(--gray-line);
   color: var(--title);
 }
 
