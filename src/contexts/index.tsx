@@ -6,6 +6,11 @@ interface ContextProviderProps {
   children: ReactNode
 }
 
+/*
+ * CountDownContext depends on ChallengeContext,
+ * therefore ChallengeProvider should be in the hierarchy above.
+ */
+
 function ContextProvider({ children }: ContextProviderProps) {
   return (
     <ChallengeProvider>

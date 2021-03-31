@@ -39,6 +39,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
     clearTimeout(countDownTimeout)
     setTime(POMODORO_CYCLE_SEC)
     setIsActive(false)
+    setIsOver(false)
   }
 
   useEffect(() => {
