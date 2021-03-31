@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useChallengeContext } from '../../contexts'
 import styles from './styles.module.css'
 
 const SECONDS_PER_MINUTE = 60
@@ -8,6 +9,8 @@ const POMODORO_CYCLE_SEC = SECONDS_PER_MINUTE * POMODORO_CYCLE_MIN
 let countDownTimeout: NodeJS.Timeout
 
 function CountDown() {
+  const { launchChallenge } = useChallengeContext()
+
   const [isOver, setIsOver] = useState(false)
   const [isActive, setIsActive] = useState(false)
   const [time, setTime] = useState(POMODORO_CYCLE_SEC)
@@ -24,6 +27,7 @@ function CountDown() {
           setTime(time - 1)
         }, 1000)
       } else if (time === 0) {
+        launchChallenge()
         setIsActive(true)
         setIsOver(true)
       }
