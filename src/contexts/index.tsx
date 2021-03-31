@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { ChallengeProvider, useChallengeContext } from './Challenge.context'
+import { CountDownProvider, useCountDownContext } from './CountDown.context'
 
 interface ContextProviderProps {
   children: ReactNode
@@ -8,7 +9,9 @@ interface ContextProviderProps {
 function ContextProvider({ children }: ContextProviderProps) {
   return (
     <ChallengeProvider>
-      {children}
+      <CountDownProvider>
+        {children}
+      </CountDownProvider>
     </ChallengeProvider>
   )
 }
@@ -16,4 +19,5 @@ function ContextProvider({ children }: ContextProviderProps) {
 export {
   ContextProvider as default,
   useChallengeContext,
+  useCountDownContext,
 }
