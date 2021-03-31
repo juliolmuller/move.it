@@ -1,25 +1,26 @@
-import { useState } from 'react'
+import { useChallengeContext } from '../../contexts'
 import styles from './styles.module.css'
 
 function ChallengeBox() {
-  const [isOver] = useState(!false)
+  const { activeChallenge, failChallenge } = useChallengeContext()
 
   return (
     <div className={styles.challengeBox}>
-      {isOver ? (
+      {activeChallenge ? (
         <div className={styles.completeChallenge}>
-          <header>Ganhe 400xp</header>
+          <header>Ganhe {activeChallenge.amount} xp</header>
 
           <main>
-            <img src="img/body.svg" />
+            <img src={`img/${activeChallenge.type}.svg`} />
             <strong>Novo Desafio!</strong>
-            <p>Levante e faça uma caminhada de 3 minutos.</p>
+            <p>{activeChallenge.description}</p>
           </main>
 
           <footer>
             <button
               type="button"
               className={styles.challengeFailureButton}
+              onClick={failChallenge}
             >Falhei</button>
             <button
               type="button"
