@@ -59,7 +59,7 @@ button {
   flex-direction: column;
 }
 
-main {
+.container > main {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
