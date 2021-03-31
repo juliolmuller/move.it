@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import CompletedChallenges from '../components/CompletedChallenges'
 import ExperienceBar from '../components/ExperienceBar'
+import ChallengeBox from '../components/ChallengeBox'
 import CountDown from '../components/CountDown'
 import Profile from '../components/Profile'
 
@@ -20,7 +21,7 @@ function Home() {
           <CountDown />
         </section>
         <section className="rightSection">
-          Right section
+          <ChallengeBox />
         </section>
       </main>
     </div>
