@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import cookies from 'js-cookie'
 import challenges from '../data/challenges.json'
 
 interface Challenge {
@@ -20,6 +21,11 @@ interface ChallengeContextInterface {
 
 interface ChallengeProviderProps {
   children: ReactNode
+  initialValue: {
+    completedChallenges: number
+    experience: number
+    level: number
+  }
 }
 
 export const ChallengeContext = createContext({} as ChallengeContextInterface)
@@ -28,11 +34,11 @@ export function useChallengeContext() {
   return useContext(ChallengeContext)
 }
 
-export function ChallengeProvider({ children }: ChallengeProviderProps) {
+export function ChallengeProvider({ children, initialValue }: ChallengeProviderProps) {
   const [activeChallenge, setActiveChallenge] = useState(null)
-  const [completedChallenges, setCompletedChallenges] = useState(0)
-  const [experience, setExperience] = useState(0)
-  const [level, setLevel] = useState(1)
+  const [completedChallenges, setCompletedChallenges] = useState(initialValue.completedChallenges ?? 0)
+  const [experience, setExperience] = useState(initialValue.experience ?? 0)
+  const [level, setLevel] = useState(initialValue.level ?? 1)
 
   const nextLevelExperience = Math.pow((level + 1) * 4, 2)
 
@@ -74,6 +80,12 @@ export function ChallengeProvider({ children }: ChallengeProviderProps) {
   useEffect(() => {
     Notification.requestPermission()
   }, [])
+
+  useEffect(() => {
+    cookies.set(process.env.NEXT_PUBLIC_STORAGE_KEY_LEVEL, String(level))
+    cookies.set(process.env.NEXT_PUBLIC_STORAGE_KEY_EXPERIENCE, String(experience))
+    cookies.set(process.env.NEXT_PUBLIC_STORAGE_KEY_CHALLENGES, String(completedChallenges))
+  }, [level, experience, completedChallenges])
 
   return (
     <ChallengeContext.Provider

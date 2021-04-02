@@ -23,6 +23,8 @@ function ContextProvider({ children }: ContextProviderProps) {
 
 export {
   ContextProvider as default,
+  ChallengeProvider,
   useChallengeContext,
+  CountDownProvider,
   useCountDownContext,
 }
