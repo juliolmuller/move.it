@@ -23,7 +23,7 @@ interface ChallengeContextInterface {
 
 interface ChallengeProviderProps {
   children: ReactNode
-  initialValue: {
+  initialValue?: {
     completedChallenges: number
     experience: number
     level: number
@@ -39,9 +39,9 @@ export function useChallengeContext() {
 export function ChallengeProvider({ children, initialValue }: ChallengeProviderProps) {
   const [activeChallenge, setActiveChallenge] = useState(null)
   const [isModalVisible, setIsModalVisible] = useState(false)
-  const [completedChallenges, setCompletedChallenges] = useState(initialValue.completedChallenges ?? 0)
-  const [experience, setExperience] = useState(initialValue.experience ?? 0)
-  const [level, setLevel] = useState(initialValue.level ?? 1)
+  const [completedChallenges, setCompletedChallenges] = useState(initialValue?.completedChallenges ?? 0)
+  const [experience, setExperience] = useState(initialValue?.experience ?? 0)
+  const [level, setLevel] = useState(initialValue?.level ?? 1)
 
   const nextLevelExperience = Math.pow((level + 1) * 4, 2)
 
