@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Julio L. Muller",
   "scripts": {
-    "dev": "next dev",
+    "postinstall": "node -e \"require('fs').existsSync('.env') || require('fs').copyFileSync('.env.example', '.env')\"",
+    "dev": "next dev -p 8080",
     "build": "next build",
     "start": "next start"
   },
