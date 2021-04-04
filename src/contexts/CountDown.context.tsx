@@ -13,9 +13,7 @@ interface CountDownProviderProps {
   children: ReactNode
 }
 
-const SECONDS_PER_MINUTE = 60
-const POMODORO_CYCLE_MIN = 25
-const POMODORO_CYCLE_SEC = SECONDS_PER_MINUTE * POMODORO_CYCLE_MIN
+const POMODORO_CYCLE_SECONDS = Number(process.env.NEXT_PUBLIC_POMODORO_CYCLE_SECONDS)
 
 let countDownTimeout: NodeJS.Timeout
 
@@ -26,7 +24,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
 
   const [isOver, setIsOver] = useState(false)
   const [isActive, setIsActive] = useState(false)
-  const [time, setTime] = useState(POMODORO_CYCLE_SEC)
+  const [time, setTime] = useState(POMODORO_CYCLE_SECONDS)
 
   function startCountDown() {
     setIsActive(true)
@@ -34,7 +32,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
 
   function resetCountDown() {
     clearTimeout(countDownTimeout)
-    setTime(POMODORO_CYCLE_SEC)
+    setTime(POMODORO_CYCLE_SECONDS)
     setIsActive(false)
     setIsOver(false)
   }
