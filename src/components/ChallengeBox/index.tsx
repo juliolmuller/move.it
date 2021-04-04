@@ -1,4 +1,4 @@
-import { useChallengeContext, useCountDownContext } from '../../contexts'
+import { useChallengeContext, useCountDownContext } from '../../hooks'
 import styles from './styles.module.css'
 
 function ChallengeBox() {

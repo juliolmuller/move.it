@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 import cookies from 'js-cookie'
 import challenges from '../data/challenges.json'
 import LevelUpModal from '../components/LevelUpModal'
@@ -31,10 +31,6 @@ interface ChallengeProviderProps {
 }
 
 export const ChallengeContext = createContext({} as ChallengeContextInterface)
-
-export function useChallengeContext() {
-  return useContext(ChallengeContext)
-}
 
 export function ChallengeProvider({ children, initialValue }: ChallengeProviderProps) {
   const [activeChallenge, setActiveChallenge] = useState(null)

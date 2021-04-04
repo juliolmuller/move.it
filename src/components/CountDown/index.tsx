@@ -1,4 +1,4 @@
-import { useCountDownContext } from '../../contexts'
+import { useCountDownContext } from '../../hooks'
 import styles from './styles.module.css'
 
 const SECONDS_PER_MINUTE = 60

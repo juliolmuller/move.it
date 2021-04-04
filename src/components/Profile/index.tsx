@@ -1,4 +1,4 @@
-import { useChallengeContext } from '../../contexts'
+import { useChallengeContext } from '../../hooks'
 import styles from './styles.module.css'
 
 function Profile() {
