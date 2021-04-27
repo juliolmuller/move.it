@@ -4,31 +4,26 @@ module.exports = {
     node: true,
   },
   extends: [
-    '@lacussoft',
-    'plugin:@typescript-eslint/recommended',
+    '@lacussoft/typescript',
   ],
-  ignorePatterns: [],
   parserOptions: {
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module',
-    ecmaVersion: 2021,
     ecmaFeatures: {
       jsx: true,
     },
   },
   plugins: [
-    '@typescript-eslint',
     'react',
     'react-hooks',
   ],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'class-methods-use-this': 'off',
-    'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'object-curly-newline': 'off',
-    'react/jsx-indent-props': ['error', 2],
+    'no-debug': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'react/jsx-closing-bracket-location': 'error',
+    'react/jsx-indent': ['error', 2, {
+      checkAttributes: true,
+      indentLogicalExpressions: true,
+    }],
+    'react/jsx-indent-props': ['error', 2],
     'react/prop-types': 'off',
   },
 }

@@ -1,6 +1,7 @@
 import BaseDocument, { Html, Head, Main, NextScript } from 'next/document'
 
 class Document extends BaseDocument {
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <Html>
