@@ -39,6 +39,7 @@ export function ChallengeProvider({ children, initialValue }: ChallengeProviderP
   const [experience, setExperience] = useState(initialValue?.experience ?? 0)
   const [level, setLevel] = useState(initialValue?.level ?? 1)
 
+  // eslint-disable-next-line no-magic-numbers
   const nextLevelExperience = Math.pow((level + 1) * 4, 2)
 
   function launchChallenge() {

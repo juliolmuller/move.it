@@ -49,7 +49,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
         setIsOver(true)
       }
     }
-  }, [isActive, time])
+  }, [isActive, time, launchChallenge])
 
   return (
     <CountDownContext.Provider
