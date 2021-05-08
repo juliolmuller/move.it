@@ -8,7 +8,8 @@
     "postinstall": "node -e \"require('fs').existsSync('.env') || require('fs').copyFileSync('.env.example', '.env')\"",
     "dev": "next dev -p 8080",
     "build": "next build",
-    "prod": "next start -p 8080"
+    "prod": "next start -p 8080",
+    "lint": "eslint src/ --fix"
   },
   "dependencies": {
     "js-cookie": "^2.2.1",
