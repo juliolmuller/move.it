@@ -13,17 +13,6 @@ interface HomeProps {
   level: number
 }
 
-// eslint-disable-next-line require-await
-export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  return {
-    props: {
-      level: Number(ctx.req.cookies[process.env.NEXT_PUBLIC_STORAGE_KEY_LEVEL]),
-      experience: Number(ctx.req.cookies[process.env.NEXT_PUBLIC_STORAGE_KEY_EXPERIENCE]),
-      completedChallenges: Number(ctx.req.cookies[process.env.NEXT_PUBLIC_STORAGE_KEY_CHALLENGES]),
-    },
-  }
-}
-
 function Home(props: HomeProps) {
   return (
     <ChallengeProvider initialValue={props}>
@@ -49,6 +38,17 @@ function Home(props: HomeProps) {
       </div>
     </ChallengeProvider>
   )
+}
+
+// eslint-disable-next-line require-await
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  return {
+    props: {
+      level: Number(ctx.req.cookies[process.env.NEXT_PUBLIC_STORAGE_KEY_LEVEL]) || 1,
+      experience: Number(ctx.req.cookies[process.env.NEXT_PUBLIC_STORAGE_KEY_EXPERIENCE]) || 0,
+      completedChallenges: Number(ctx.req.cookies[process.env.NEXT_PUBLIC_STORAGE_KEY_CHALLENGES]) || 0,
+    },
+  }
 }
 
 export default Home
