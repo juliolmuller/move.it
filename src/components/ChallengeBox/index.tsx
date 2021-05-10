@@ -1,5 +1,5 @@
 import { useChallengeContext, useCountDownContext } from '../../hooks'
-import styles from './styles.module.css'
+import styles from './styles.module.scss'
 
 function ChallengeBox() {
   const { resetCountDown } = useCountDownContext()
