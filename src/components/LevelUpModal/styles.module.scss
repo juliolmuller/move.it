@@ -21,32 +21,32 @@
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   text-align: center;
-}
 
-.container header {
-  background: url('/img/levelup.svg') no-repeat center;
-  background-size: contain;
-  color: var(--blue);
-  font-size: 8.75rem;
-  font-weight: 600;
-}
+  header {
+    background: url('/img/levelup.svg') no-repeat center;
+    background-size: contain;
+    color: var(--blue);
+    font-size: 8.75rem;
+    font-weight: 600;
+  }
 
-.container strong {
-  color: var(--title);
-  font-size: 2.25rem;
-}
+  strong {
+    color: var(--title);
+    font-size: 2.25rem;
+  }
 
-.container p {
-  margin-top: 0.25rem;
-  color: var(--text);
-  font-size: 1.25rem;
-}
+  p {
+    margin-top: 0.25rem;
+    color: var(--text);
+    font-size: 1.25rem;
+  }
 
-.container button {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  background-color: transparent;
-  border: none;
-  font-size: 0;
+  button {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+  }
 }
