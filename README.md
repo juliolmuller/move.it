@@ -89,4 +89,4 @@ Besides, both v1.0 and v2.0 have their layouts available at **[Figma](http://fig
 
 ---
 
-Also checkout the project developed in [NLW #2](https://github.com/juliolmuller/proffy) and [NLW #3](https://github.com/juliolmuller/happy)
+Also checkout the project developed in [NLW #2](https://github.com/juliolmuller/proffy), [NLW #3](https://github.com/juliolmuller/happy), [NLW #5](https://github.com/juliolmuller/podcastr) and [NLW #5](https://github.com/juliolmuller/podcastr).

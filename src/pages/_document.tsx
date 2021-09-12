@@ -1,8 +1,8 @@
-import BaseDocument, { Html, Head, Main, NextScript } from 'next/document'
+/* eslint-disable @next/next/no-document-import-in-page, @next/next/no-page-custom-font */
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 
-class Document extends BaseDocument {
-  // eslint-disable-next-line class-methods-use-this
-  render() {
+class Document extends NextDocument {
+  render() { // eslint-disable-line class-methods-use-this
     return (
       <Html>
         <Head>
