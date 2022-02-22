@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?labelColor=000000&color=5965E0&label=created%20at&message=Mar%202021" alt="Creation Date" />
+  <img src="https://img.shields.io/static/v1?labelColor=000000&color=5965E0&label=created%20at&message=march%202021" alt="Creation Date" />
 
   <img src="https://img.shields.io/github/last-commit/juliolmuller/move.it?label=updated%20at&labelColor=000000&color=5965E0" alt="Update Date" />
 
@@ -51,13 +51,13 @@ Application developed during the fourth edition of [Next Level Week](https://nex
 
 ## :hammer: Setting up the Environment
 
-Make sure to have **Node.js 14+** installed in your machine and its `node` and `npm` shortcuts available through the command line, then use the following routines to run each part of the project:
+Make sure to have **Node.js 14+** installed in your machine and its `node` and `yarn` (`npm` will do the job as well) available through the command line, then use the following routines to run each part of the project:
 
 ```bash
-$ npm install     # install required dependencies
-$ npm run dev     # install development server
-$ npm run build   # build production version
-$ npm start       # run node server with built files
+$ yarn         # install required dependencies
+$ yarn dev     # install development server
+$ yarn build   # build production version
+$ yarn start   # run node server with built files
 ```
 
 ## :zap: Features Implementations
@@ -89,4 +89,4 @@ Besides, both v1.0 and v2.0 have their layouts available at **[Figma](http://fig
 
 ---
 
-Also checkout the project developed in [NLW #2](https://github.com/juliolmuller/proffy), [NLW #3](https://github.com/juliolmuller/happy), [NLW #5](https://github.com/juliolmuller/podcastr) and [NLW #5](https://github.com/juliolmuller/podcastr).
+Also checkout the project developed in [NLW #2](https://github.com/juliolmuller/proffy), [NLW #3](https://github.com/juliolmuller/happy), [NLW #5](https://github.com/juliolmuller/podcastr) and [NLW #6](https://github.com/juliolmuller/letmeask).
