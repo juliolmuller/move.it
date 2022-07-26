@@ -1,7 +1,8 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
 import cookies from 'js-cookie'
-import challenges from '../data/challenges.json'
+import { createContext, ReactNode, useEffect, useState } from 'react'
+
 import LevelUpModal from '../components/LevelUpModal'
+import challenges from '../data/challenges.json'
 
 interface Challenge {
   type: 'body' | 'eye'

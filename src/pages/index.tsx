@@ -1,11 +1,12 @@
-import Head from 'next/head'
 import { GetServerSidePropsContext } from 'next'
-import { ChallengeProvider, CountDownProvider } from '../contexts'
-import CompletedChallenges from '../components/CompletedChallenges'
-import ExperienceBar from '../components/ExperienceBar'
+import Head from 'next/head'
+
 import ChallengeBox from '../components/ChallengeBox'
+import CompletedChallenges from '../components/CompletedChallenges'
 import CountDown from '../components/CountDown'
+import ExperienceBar from '../components/ExperienceBar'
 import Profile from '../components/Profile'
+import { ChallengeProvider, CountDownProvider } from '../contexts'
 
 interface HomeProps {
   completedChallenges: number
