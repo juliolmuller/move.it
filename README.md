@@ -1,5 +1,5 @@
 <h1 title="Move.It" align="center">
-  <img src=".github/icon.svg" width="24px" alt="Move.It" />
+  <img src="https://user-images.githubusercontent.com/44725817/212789981-4ef2df70-d91e-4f9a-982b-528e966d6229.png" width="24px" alt="Move.It" />
   Move.It
 </h1>
 
@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="./.github/moveit.svg" alt="Application Overview" width="100%">
+  <img src="https://user-images.githubusercontent.com/44725817/212790158-c6257699-78ae-4566-9274-07664c0ad366.png" alt="Application Overview" width="100%">
 </p>
 
 Application developed during the fourth edition of [Next Level Week](https://nextlevelweek.com/), delivered by [RocketSeat](https://rocketseat.com.br/). The objective was to build a web application promote work breaks using [Pomodoro technique](https://en.wikipedia.org/wiki/Pomodoro_Technique#:~:text=The%20Pomodoro%20Technique%20is%20a,length%2C%20separated%20by%20short%20breaks.). The project sought to implement the idea using **React.js** and **Next.js**, without a robust backend for that.
