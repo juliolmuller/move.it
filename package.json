@@ -13,6 +13,7 @@
     "commit": "git-cz",
     "dev": "next dev --port 8080",
     "development": "npm run dev",
+    "now-build": "next build",
     "build": "next build",
     "prod": "next start",
     "production": "npm run prod",
