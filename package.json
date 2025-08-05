@@ -11,7 +11,7 @@
   "scripts": {
     "postinstall": "node -e \"require('fs').existsSync('.env') || require('fs').copyFileSync('.env.example', '.env')\"",
     "prepare": "bun x husky install",
-    "commit": "git-cz",
+    "commit": "commit",
     "dev": "next dev --port 8080",
     "development": "bun run dev",
     "prod": "next start",
@@ -26,13 +26,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "17.4.2",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/prompt-cli": "^19.8.1",
     "@types/js-cookie": "3.0.2",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
-    "commitizen": "^4.2.6",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-lacussoft": "^2.3.0",
     "eslint-config-next": "^13.1.2",
