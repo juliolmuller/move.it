@@ -45,19 +45,21 @@ Application developed during the fourth edition of [Next Level Week](https://nex
 - [JS Cookies](https://github.com/js-cookie/js-cookie)
 
 **Development:**
-- TypeScript
 - [Visual Studio Code](https://code.visualstudio.com/)
-- Node.js routines with NPM
+- [Node.js](https://nodejs.org/) (JS runtime)
+- [Bun](https://bun.sh/) (package manager)
+- TypeScript
+- ESlint
 
 ## :hammer: Setting up the Environment
 
-Make sure to have **Node.js 14+** installed in your machine and its `node` and `yarn` (`npm` will do the job as well) available through the command line, then use the following routines to run each part of the project:
+Make sure to have **Node.js 14+** installed in your machine and its `node` and `bun` available through the command line, then use the following routines to run each part of the project:
 
 ```bash
-$ yarn         # install required dependencies
-$ yarn dev     # install development server
-$ yarn build   # build production version
-$ yarn start   # run node server with built files
+$ bun install     # install required dependencies
+$ bun run dev     # install development server
+$ bun run build   # build production version
+$ bun run start   # run node server with built files
 ```
 
 ## :zap: Features Implementations
