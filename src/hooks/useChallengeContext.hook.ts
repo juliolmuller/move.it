@@ -1,9 +1,7 @@
-import { useContext } from 'react'
+import { useContext } from 'react';
 
-import { ChallengeContext } from '../contexts'
+import { ChallengeContext, type ChallengeContextInterface } from '../contexts';
 
-function useChallengeContext() {
-  return useContext(ChallengeContext)
+export default function useChallengeContext(): ChallengeContextInterface {
+  return useContext(ChallengeContext);
 }
-
-export default useChallengeContext

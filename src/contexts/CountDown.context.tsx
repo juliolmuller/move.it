@@ -1,56 +1,56 @@
-import { createContext, ReactNode, useEffect, useState } from 'react'
+import { createContext, type ReactNode, useEffect, useState } from 'react';
 
-import { useChallengeContext } from '../hooks'
+import { useChallengeContext } from '../hooks';
 
-interface CountDownContextInterface {
-  isActive: boolean
-  isOver: boolean
-  time: number
-  startCountDown: () => void
-  resetCountDown: () => void
+export interface CountDownContextInterface {
+  isActive: boolean;
+  isOver: boolean;
+  resetCountDown: () => void;
+  startCountDown: () => void;
+  time: number;
 }
 
-interface CountDownProviderProps {
-  children: ReactNode
+export interface CountDownProviderProps {
+  children: ReactNode;
 }
 
-const POMODORO_CYCLE_SECONDS = Number(process.env.NEXT_PUBLIC_POMODORO_CYCLE_SECONDS)
+const POMODORO_CYCLE_SECONDS = Number(process.env.NEXT_PUBLIC_POMODORO_CYCLE_SECONDS);
 
-let countDownTimeout: NodeJS.Timeout
+let countDownTimeout: NodeJS.Timeout;
 
-export const CountDownContext = createContext({} as CountDownContextInterface)
+export const CountDownContext = createContext({} as CountDownContextInterface);
 
-export function CountDownProvider({ children }: CountDownProviderProps) {
-  const { launchChallenge } = useChallengeContext()
+export function CountDownProvider({ children }: CountDownProviderProps): ReactNode {
+  const { launchChallenge } = useChallengeContext();
 
-  const [isOver, setIsOver] = useState(false)
-  const [isActive, setIsActive] = useState(false)
-  const [time, setTime] = useState(POMODORO_CYCLE_SECONDS)
+  const [isOver, setIsOver] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [time, setTime] = useState(POMODORO_CYCLE_SECONDS);
 
-  function startCountDown() {
-    setIsActive(true)
+  function startCountDown(): void {
+    setIsActive(true);
   }
 
-  function resetCountDown() {
-    clearTimeout(countDownTimeout)
-    setTime(POMODORO_CYCLE_SECONDS)
-    setIsActive(false)
-    setIsOver(false)
+  function resetCountDown(): void {
+    clearTimeout(countDownTimeout);
+    setTime(POMODORO_CYCLE_SECONDS);
+    setIsActive(false);
+    setIsOver(false);
   }
 
   useEffect(() => {
     if (isActive) {
       if (time > 0) {
         countDownTimeout = setTimeout(() => {
-          setTime(time - 1)
-        }, 1000)
+          setTime(time - 1);
+        }, 1000);
       } else if (time === 0) {
-        launchChallenge()
-        setIsActive(true)
-        setIsOver(true)
+        launchChallenge();
+        setIsActive(true);
+        setIsOver(true);
       }
     }
-  }, [isActive, time, launchChallenge])
+  }, [isActive, time, launchChallenge]);
 
   return (
     <CountDownContext.Provider
@@ -64,5 +64,5 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
     >
       {children}
     </CountDownContext.Provider>
-  )
+  );
 }
