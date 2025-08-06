@@ -1,18 +1,21 @@
-import { useChallengeContext, useCountDownContext } from '../../hooks'
-import styles from './styles.module.scss'
+import { type ReactNode } from 'react';
 
-function ChallengeBox() {
-  const { resetCountDown } = useCountDownContext()
-  const { activeChallenge, failChallenge, completeChallenge } = useChallengeContext()
+import { useChallengeContext, useCountDownContext } from '~/hooks';
 
-  function handleChallengeSuccess() {
-    resetCountDown()
-    completeChallenge()
+import styles from './styles.module.scss';
+
+export function ChallengeBox(): ReactNode {
+  const { resetCountDown } = useCountDownContext();
+  const { activeChallenge, failChallenge, completeChallenge } = useChallengeContext();
+
+  function handleChallengeSuccess(): void {
+    resetCountDown();
+    completeChallenge();
   }
 
-  function handleChallengeFailure() {
-    resetCountDown()
-    failChallenge()
+  function handleChallengeFailure(): void {
+    resetCountDown();
+    failChallenge();
   }
 
   return (
@@ -32,12 +35,16 @@ function ChallengeBox() {
               type="button"
               className={styles.challengeFailureButton}
               onClick={handleChallengeFailure}
-            >Falhei</button>
+            >
+              Falhei
+            </button>
             <button
               type="button"
               className={styles.challengeSuccessButton}
               onClick={handleChallengeSuccess}
-            >Completei</button>
+            >
+              Completei
+            </button>
           </footer>
         </div>
       ) : (
@@ -50,7 +57,5 @@ function ChallengeBox() {
         </div>
       )}
     </div>
-  )
+  );
 }
-
-export default ChallengeBox

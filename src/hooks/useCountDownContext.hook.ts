@@ -1,9 +1,7 @@
-import { useContext } from 'react'
+import { useContext } from 'react';
 
-import { CountDownContext } from '../contexts'
+import { CountDownContext, type CountDownContextInterface } from '~/contexts';
 
-function useCountDownContext() {
-  return useContext(CountDownContext)
+export default function useCountDownContext(): CountDownContextInterface {
+  return useContext(CountDownContext);
 }
-
-export default useCountDownContext

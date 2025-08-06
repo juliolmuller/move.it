@@ -1,8 +1,11 @@
-import { useChallengeContext } from '../../hooks'
-import styles from './styles.module.scss'
+import { type ReactNode } from 'react';
 
-function LevelUpModal() {
-  const { level, closeModal } = useChallengeContext()
+import { useChallengeContext } from '~/hooks';
+
+import styles from './styles.module.scss';
+
+export function LevelUpModal(): ReactNode {
+  const { level, closeModal } = useChallengeContext();
 
   return (
     <div className={styles.overlay}>
@@ -17,7 +20,5 @@ function LevelUpModal() {
         </button>
       </div>
     </div>
-  )
+  );
 }
-
-export default LevelUpModal

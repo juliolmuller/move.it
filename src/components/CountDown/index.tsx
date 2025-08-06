@@ -1,21 +1,18 @@
-import { useCountDownContext } from '../../hooks'
-import styles from './styles.module.scss'
+import { type ReactNode } from 'react';
 
-const SECONDS_PER_MINUTE = 60
+import { useCountDownContext } from '~/hooks';
 
-function CountDown() {
-  const {
-    time,
-    isOver,
-    isActive,
-    startCountDown,
-    resetCountDown,
-  } = useCountDownContext()
+import styles from './styles.module.scss';
 
-  const minutes = Math.floor(time / SECONDS_PER_MINUTE)
-  const seconds = time % SECONDS_PER_MINUTE
-  const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
-  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
+const SECONDS_PER_MINUTE = 60;
+
+export function CountDown(): ReactNode {
+  const { time, isOver, isActive, startCountDown, resetCountDown } = useCountDownContext();
+
+  const minutes = Math.floor(time / SECONDS_PER_MINUTE);
+  const seconds = time % SECONDS_PER_MINUTE;
+  const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
+  const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
 
   return (
     <>
@@ -31,27 +28,23 @@ function CountDown() {
         </div>
       </div>
 
-      {isOver ? ( // eslint-disable-line no-nested-ternary
-        <button
-          type="button"
-          className={styles.button}
-          disabled
-        >Ciclo Encerrado</button>
+      {isOver ? (
+        <button type="button" className={styles.button} disabled>
+          Ciclo Encerrado
+        </button>
       ) : isActive ? (
         <button
           type="button"
           className={`${styles.button} ${styles.cycleActive}`}
           onClick={resetCountDown}
-        >Abandonar Ciclo</button>
+        >
+          Abandonar Ciclo
+        </button>
       ) : (
-        <button
-          type="button"
-          className={styles.button}
-          onClick={startCountDown}
-        >Iniciar Novo Ciclo</button>
+        <button type="button" className={styles.button} onClick={startCountDown}>
+          Iniciar Novo Ciclo
+        </button>
       )}
     </>
-  )
+  );
 }
-
-export default CountDown

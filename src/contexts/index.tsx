@@ -1,10 +1,18 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react';
 
-import { ChallengeContext, ChallengeProvider } from './Challenge.context'
-import { CountDownContext, CountDownProvider } from './CountDown.context'
+import {
+  ChallengeContext,
+  type ChallengeContextInterface,
+  ChallengeProvider,
+} from './Challenge.context';
+import {
+  CountDownContext,
+  type CountDownContextInterface,
+  CountDownProvider,
+} from './CountDown.context';
 
 interface ContextProviderProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 /*
@@ -12,20 +20,19 @@ interface ContextProviderProps {
  * therefore ChallengeProvider should be in the hierarchy above.
  */
 
-function ContextProvider({ children }: ContextProviderProps) {
+export default function ContextProvider({ children }: ContextProviderProps): ReactNode {
   return (
     <ChallengeProvider>
-      <CountDownProvider>
-        {children}
-      </CountDownProvider>
+      <CountDownProvider>{children}</CountDownProvider>
     </ChallengeProvider>
-  )
+  );
 }
 
 export {
-  ContextProvider as default,
-  CountDownContext,
-  ChallengeProvider,
   ChallengeContext,
+  type ChallengeContextInterface,
+  ChallengeProvider,
+  CountDownContext,
+  type CountDownContextInterface,
   CountDownProvider,
-}
+};
