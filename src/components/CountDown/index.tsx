@@ -1,11 +1,12 @@
 import { type ReactNode } from 'react';
 
-import { useCountDownContext } from '../../hooks';
+import { useCountDownContext } from '~/hooks';
+
 import styles from './styles.module.scss';
 
 const SECONDS_PER_MINUTE = 60;
 
-function CountDown(): ReactNode {
+export function CountDown(): ReactNode {
   const { time, isOver, isActive, startCountDown, resetCountDown } = useCountDownContext();
 
   const minutes = Math.floor(time / SECONDS_PER_MINUTE);
@@ -47,5 +48,3 @@ function CountDown(): ReactNode {
     </>
   );
 }
-
-export default CountDown;

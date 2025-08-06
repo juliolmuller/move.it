@@ -1,6 +1,6 @@
 import { createContext, type ReactNode, useEffect, useState } from 'react';
 
-import { useChallengeContext } from '../hooks';
+import { useChallengeContext } from '~/hooks';
 
 export interface CountDownContextInterface {
   isActive: boolean;

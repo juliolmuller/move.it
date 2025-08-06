@@ -1,8 +1,8 @@
 import cookies from 'js-cookie';
 import { createContext, type ReactNode, useEffect, useState } from 'react';
 
-import LevelUpModal from '../components/LevelUpModal';
-import challenges from '../data/challenges.json';
+import { LevelUpModal } from '~/components';
+import challenges from '~/data/challenges.json';
 
 interface Challenge {
   amount: number;

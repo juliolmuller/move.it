@@ -1,9 +1,10 @@
 import { type ReactNode } from 'react';
 
-import { useChallengeContext } from '../../hooks';
+import { useChallengeContext } from '~/hooks';
+
 import styles from './styles.module.scss';
 
-function CompletedChallenges(): ReactNode {
+export function CompletedChallenges(): ReactNode {
   const { completedChallenges } = useChallengeContext();
 
   return (
@@ -13,5 +14,3 @@ function CompletedChallenges(): ReactNode {
     </div>
   );
 }
-
-export default CompletedChallenges;

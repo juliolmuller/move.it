@@ -1,9 +1,10 @@
 import { type ReactNode } from 'react';
 
-import { useChallengeContext } from '../../hooks';
+import { useChallengeContext } from '~/hooks';
+
 import styles from './styles.module.scss';
 
-function LevelUpModal(): ReactNode {
+export function LevelUpModal(): ReactNode {
   const { level, closeModal } = useChallengeContext();
 
   return (
@@ -21,5 +22,3 @@ function LevelUpModal(): ReactNode {
     </div>
   );
 }
-
-export default LevelUpModal;

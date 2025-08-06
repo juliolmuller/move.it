@@ -1,9 +1,10 @@
 import { type ReactNode } from 'react';
 
-import { useChallengeContext } from '../../hooks';
+import { useChallengeContext } from '~/hooks';
+
 import styles from './styles.module.scss';
 
-function ExperienceBar(): ReactNode {
+export function ExperienceBar(): ReactNode {
   const { experience, nextLevelExperience } = useChallengeContext();
 
   const experiencePercentage = Math.round((experience / nextLevelExperience) * 100);
@@ -21,5 +22,3 @@ function ExperienceBar(): ReactNode {
     </header>
   );
 }
-
-export default ExperienceBar;

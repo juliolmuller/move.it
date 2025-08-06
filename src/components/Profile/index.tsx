@@ -1,9 +1,10 @@
 import { type ReactNode } from 'react';
 
-import { useChallengeContext } from '../../hooks';
+import { useChallengeContext } from '~/hooks';
+
 import styles from './styles.module.scss';
 
-function Profile(): ReactNode {
+export function Profile(): ReactNode {
   const { level } = useChallengeContext();
 
   return (
@@ -19,5 +20,3 @@ function Profile(): ReactNode {
     </div>
   );
 }
-
-export default Profile;

@@ -2,12 +2,8 @@ import { type GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { type ReactNode } from 'react';
 
-import ChallengeBox from '../components/ChallengeBox';
-import CompletedChallenges from '../components/CompletedChallenges';
-import CountDown from '../components/CountDown';
-import ExperienceBar from '../components/ExperienceBar';
-import Profile from '../components/Profile';
-import { ChallengeProvider, CountDownProvider } from '../contexts';
+import { ChallengeBox, CompletedChallenges, CountDown, ExperienceBar, Profile } from '~/components';
+import { ChallengeProvider, CountDownProvider } from '~/contexts';
 
 interface HomeProps {
   completedChallenges: number;

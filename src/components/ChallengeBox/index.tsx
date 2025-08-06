@@ -1,9 +1,10 @@
 import { type ReactNode } from 'react';
 
-import { useChallengeContext, useCountDownContext } from '../../hooks';
+import { useChallengeContext, useCountDownContext } from '~/hooks';
+
 import styles from './styles.module.scss';
 
-function ChallengeBox(): ReactNode {
+export function ChallengeBox(): ReactNode {
   const { resetCountDown } = useCountDownContext();
   const { activeChallenge, failChallenge, completeChallenge } = useChallengeContext();
 
@@ -58,5 +59,3 @@ function ChallengeBox(): ReactNode {
     </div>
   );
 }
-
-export default ChallengeBox;
