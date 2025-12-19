@@ -10,21 +10,15 @@
   "homepage": "https://jlm-moveit.vercel.app/",
   "scripts": {
     "postinstall": "node -e \"require('fs').existsSync('.env') || require('fs').copyFileSync('.env.example', '.env')\"",
-    "prepare": "bun x husky",
+    "prepare": "husky || true",
     "commit": "commit",
     "release": "semantic-release",
-    "dev": "next dev --port 8080",
-    "development": "bun run dev",
-    "prod": "next start",
-    "production": "bun run prod",
+    "development": "next dev --port 30303",
+    "dev": "bun run development",
+    "production": "next start --port 30303",
+    "prod": "bun run production",
     "build": "next build",
-    "lint": "next lint --fix"
-  },
-  "dependencies": {
-    "js-cookie": "^3.0.5",
-    "next": "^15.5.9",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "lint": "eslint --fix src/ eslint.config.mjs next.config.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
@@ -40,7 +34,7 @@
     "@types/react": "^19.2.7",
     "eslint": "^9.39.2",
     "eslint-config-any": "^2.2.1",
-    "eslint-config-next": "^15.5.9",
+    "eslint-config-next": "^16.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
